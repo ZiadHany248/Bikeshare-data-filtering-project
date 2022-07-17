@@ -180,9 +180,9 @@ def user_stats(city):
         gender_count = df['Gender'].value_counts()
         print('The number of males is {} and the number of females is {}\n'.format(user_count['Male'], user_count['Female']))
         # TO DO: Display earliest, most recent, and most common year of birth
-        _birth_year = df['Birth Year'].min()
-        ax_birth_year = df['Birth Year'].max()
-        common_birth_year = df['Birth Year'].mode()
+        min_birth_year = df['Birth Year'].min()
+        max_birth_year = df['Birth Year'].max()
+        mode_birth_year = df['Birth Year'].mode()
         print('The earlist birth year is {}\n'.format(min_birth_year))
         print('The most recent birth year is {}\n'.format(max_birth_year))
         print('The most common birth year is {}\n'.format(mode_birth_year))
