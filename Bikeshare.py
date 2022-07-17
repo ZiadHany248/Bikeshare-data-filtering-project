@@ -92,6 +92,49 @@ def load_data(city, month, day):
 
 myframe = load_data(x[0], x[1], x[2])
 
+#The next section will be dedicated to prompting the user to show parts of the dataframe
+
+while 1:
+    prompt = input('would you like to see some data? Type "yes" to display and "no" to keep going\nAnswer: ').lower()
+    if prompt != 'yes' and prompt != 'no':
+        while prompt != 'yes' and prompt != 'no':
+            prompt = input('Please enter a valid answer. Would you like to see some data? Type "yes" to display data and "no" to keep going: ')
+    if prompt == 'yes':
+        finish = 5
+        answer = 'yes'
+        while answer == 'yes':
+            if finish > len(myframe):
+                start = finish - 5
+                print(myframe.iloc[start:len(myframe),:])
+                print('\n Sorry, you\'ve reached the end of the data')
+                prompt = input('would you like to restart? Type yes to restart and no to continue\nAnswer: ')
+                while prompt != 'yes' and prompt != 'no':
+                    prompt = input('Please enter a valid answer. Would you like to see some data? Type "yes" to display data and "no" to keep going: ')
+                break
+
+            if finish == len(myframe):
+                start = finish - 5
+                print(myframe.iloc[start:finish,:])
+                print('\n Sorry , this was all the data!')
+                prompt = input('would you like to restart? Type yes to restart and no to continue\nAnswer: ')
+                while prompt != 'yes' and prompt != 'no':
+                    prompt = input('Please enter a valid answer. Would you like to see some data? Type "yes" to display data and "no" to keep going: ')
+                break
+
+            if finish < len(myframe):
+                start = finish - 5
+                print(myframe.iloc[start:finish,:])
+                answer = input('would you like to see some more date? Type "yes" to continue and "no" to stop: ').lower()
+                if answer == 'yes':
+                    finish += 5
+                    continue
+                if answer == 'no':
+                    prompt = 'no'
+                    break
+
+    if prompt == 'no':
+        break
+
 
 
 def time_stats(city):
