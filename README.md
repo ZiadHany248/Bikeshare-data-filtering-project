@@ -22,7 +22,9 @@ A new function, `load data`, the inputs to which are the previously provided  ci
         df = df[df['day_of_week'] == day.title()]`
         
 5. The user is then asked if they would like to view some of the data they've filtered. If they enter yes the data is viewed 5 by 5 until they either reach the end of the dataset **or** they type no
-6. When they enter no, The code automatically moves on to do specific calculations. Those calculations are: - The Most Frequent Times of Travel
-                                                                                                            - The most common month for travelling
-                                                                                                            - The most common weekday for travelling
-                                                                                                            - The most common hour for travelling                                                                                                                                     - The most common starting station                                             
+6. When they enter no, The code automatically moves on to do specific calculations. Those calculations are:
+ - The Most Frequent Times of Travel
+ - The most common month for travelling
+ - The most common weekday for travelling
+ - The most common hour for travelling                        
+ - The most common starting station                                             
